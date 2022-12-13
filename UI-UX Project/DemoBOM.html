@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>BrowserObjectModel</title>
+</head>
+
+<body>
+
+    <br>
+
+    <!-- Window Object Method Using Buttton Click Event -->
+
+    <h1>
+        Window Object Method Using Buttton Click Event
+    </h1>
+
+    <button onclick="openWin()">
+        New window
+    </button>
+    <button onclick="moveWin()">
+        Move window
+    </button>
+    <button onclick="resizeWin()">
+        Resize window
+    </button>
+    <button onclick="resizeWin2()">
+        Resize By window
+    </button>
+    <button onclick="closeWin()">
+        Close window
+    </button>
+
+    <script>
+
+        var myWindow;
+
+        function openWin() {
+            myWindow = window.open("", "_blank",
+                'width = 100, height = 100');
+        }
+
+        function moveWin() {
+            myWindow.moveTo(600, 100);
+            myWindow.focus();
+        }
+
+        function resizeWin() {
+            myWindow.resizeTo(500, 500);
+            myWindow.focus();
+        }
+
+        function resizeWin2() {
+            myWindow.resizeBy(-150, -150);
+            myWindow.focus();
+        }
+
+        function closeWin() {
+            myWindow.close();
+        }
+
+    </script>
+
+    <br><br>
+
+    <!-- Window Object Method Using addEventListener Method -->
+
+    <h1>
+        Window Object Method Using addEventListener Method
+    </h1>
+
+    <button class="btn open">Open Window</button>
+    <button class="btn move">Move Window</button>
+    <button class="btn resize">Resize Window</button>
+    <button class="btn resizeBy">Resize By Window</button>
+    <button class="btn close">Close Window</button>
+
+    <script>
+        var newPage = document.querySelector('.open')
+            .addEventListener('click', function () {
+
+                newWindow =
+                    window.open("", "_blank",
+                        'width=200,height=200 top=100,left=900');
+            });
+
+        document.querySelector('.move')
+            .addEventListener('click', function () {
+                newWindow.moveTo(600, 100);
+                newWindow.focus();
+
+            });
+
+        document.querySelector('.resize')
+            .addEventListener('click', function () {
+                newWindow.resizeTo(500, 500);
+                newWindow.focus();
+            });
+
+        document.querySelector('.resizeBy')
+            .addEventListener('click', function () {
+                newWindow.resizeBy(-150, -150);
+                newWindow.focus();
+            });
+
+        document.querySelector('.close')
+            .addEventListener('click', function () {
+                newWindow.close();
+            });
+
+    </script>
+
+</body>
+
+</html>

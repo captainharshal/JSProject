@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbstractClass</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Abstract Class 'Fruit'.
+        class Fruit {
+
+            constructor() {
+                if (this.constructor == Fruit) {
+                    throw new Error("Abstract classes can't be instantiated.");
+                }
+            }
+            // Method 'color'
+            color() {
+                throw new Error("Method 'color()' must be implemented.");
+            }
+            // Method 'eat'
+            eat() {
+                console.log("eating");
+            }
+        }
+
+        // Concrete class 'Apple'
+        class Apple extends Fruit {
+            color() {
+                console.log("Red");
+            }
+        }
+
+        // Concrete class 'Orange'
+        class Orange extends Fruit {
+            color() {
+                console.log("Orange");
+            }
+
+        }
+
+        // Concrete class 'Banana'
+        class Banana extends Fruit {
+
+        }
+
+        // Calling the classes
+        new Apple().eat();
+        new Orange().eat();
+        new Apple().color();
+        new Orange().color();
+
+        // Calling the classes generate Exception
+        new Banana().color();
+        new Fruit();
+
+    </script>
+
+</body>
+
+</html>

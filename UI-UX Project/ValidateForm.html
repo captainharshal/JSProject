@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootStrapNavBarForm</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="./ValidateForm.js"></script>
+
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+
+            display: block;
+        }
+
+        #navbarDropdown {
+
+            background-color: khaki;
+        }
+
+        #country {
+            font-size: 15px;
+            font-weight: bold;
+            background-color: greenyellow;
+        }
+
+        #lForm {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        li:hover {
+            color: red;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+
+<body onload="SetCalender()">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" target="_blank" href="https://www.raystec.com/" data-toggle="tooltip"
+                    title="raystec">Rays Technology</a>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" data-toggle="tooltip" title="Home">Home</a></li>
+                <li><a href="#" data-toggle="tooltip" title="About Us">About Us</a></li>
+                <li><a href="#" data-toggle="tooltip" title="Contact">Contact</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Services<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="navbarDropdown">
+                        <li><span class="glyphicon glyphicon-envelope"><a href="#"><b> E-Mail</b></a></span></li>
+                        <li><span class="glyphicon glyphicon-music"><a href="#"><b> Music</b></a></span></li>
+                        <li><span class="glyphicon glyphicon-hd-video"><a href="#"><b> Video</b></a></span></li>
+                        <li><span class="glyphicon glyphicon-upload"><a href="#"><b> Upload</b></a></span></li>
+                        <li><span class="glyphicon glyphicon-download"><a href="#"><b> Download</b></a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <form class="navbar-form navbar-right">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button type="submit" class="btn btn-default"><a href="#" data-toggle="tooltip" title="Search Bar">
+                            <span class="glyphicon glyphicon-search"></span></a>
+                    </button>
+                </div>
+
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="tooltip" title="New User"><span class="glyphicon glyphicon-user"></span>
+                        Sign Up</a></li>
+                <li><a href="#" data-toggle="tooltip" title="Registered User"><span
+                            class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div class="container">
+
+        <br><br>
+
+        <ul class="pager">
+            <li class="previous"><a href="#" data-toggle="tooltip" title="Previous">Previous</a></li>
+            <li class="next"><a href="#" data-toggle="tooltip" title="Next">Next</a></li>
+        </ul>
+
+        <div id="lForm" class="alert alert-danger alert-dismissible fade in">
+            <a class="close" data-dismiss="alert" aria-label="close"></a>
+            <strong><u>LOGIN INFORMATION FORM</u></strong>
+        </div>
+
+        <form class="form-horizontal" action="" method="" onsubmit="return validateFrm()">
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="fname"><b>First Name:</b></label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="fname" type="text" placeholder="Enter first name - Alphabet Only"
+                        pattern="^[a-zA-Z]*$" onfocusin="myFocusin(this)" onfocusout="myFocusout(this)" required
+                        autofocus>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="lname"><b>Last Name:</b></label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="lname" type="text" placeholder="Enter last name - Alphabet Only"
+                        pattern="^[a-zA-Z]*$" onfocusin="myFocusin(this)" onfocusout="myFocusout(this)" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="email"><b>E-mail Address:</b></label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="email" type="email" placeholder="Enter valid mail id"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onfocusin="myFocusin(this)"
+                        onfocusout="myFocusout1(this)" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="phone"><b>Mobile Number:</b></label>
+                <div class="col-sm-1">
+                    <input class="form-control" id="country" type="text" value="  +91 " disabled>
+                </div>
+                <div class="col-sm-9">
+                    <input class="form-control" id="phone" type="tel" placeholder="Mobile Number Without Country Code"
+                        pattern="[6-9][0-9]{9}" onfocusin="myFocusin(this)" onfocusout="myFocusout2(this)" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="uname"><b>User Name:</b></label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="uname" type="text" placeholder="Enter user name - Alphanumeric"
+                        onfocusin="myFocusin(this)" onfocusout="myFocusout2(this)" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="pwd"><b>Enter Password:</b></label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="pwd" type="password"
+                        placeholder="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onfocusin="myFocusin(this)"
+                        onfocusout="myFocusout2(this)" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="rpwd"><b>Re-Enter Password:</b></label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="rpwd" type="password" placeholder="Re-Enter password"
+                        onfocusin="myFocusin(this)" onfocusout="validatePwd()" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="gender"><b>Select Gender:</b></label>
+                <div class="col-sm-4">
+                    <label class="radio-inline"><input type="radio" name="optradio" checked><b>MALE</b></label>
+                    <label class="radio-inline"><input type="radio" name="optradio"><b>FEMALE</b></label>
+                    <label class="radio-inline"><input type="radio" name="optradio"><b>OTHER</b></label>
+                </div>
+
+                <label class="col-sm-3 control-label" for="nationality"><b>Nationality:</b></label>
+                <div class="col-sm-3">
+                    <label class="radio-inline"><input type="radio" name="optradio1" checked><b>INDIAN</b></label>
+                    <label class="radio-inline"><input type="radio" name="optradio1"><b>OTHER</b></label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="dob"><b>Date of Birth:</b></label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="datefield" type="text"
+                        placeholder="Your Age Should be Between 18 To 100 Years" onfocusin="myFocusin1(this)"
+                        onfocusout="myFocusout3(this)" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="qual"><b>Qualification:</b></label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="qual" onfocusin="myFocusin(this)" onfocusout="myFocusout2(this)"
+                        required>
+                        <option value="">Select</option>
+                        <option value="BEngg">B.Engg.</option>
+                        <option value="BTech">B.Tech.</option>
+                        <option value="MEngg">M.Engg.</option>
+                        <option value="MTech">M.Tech.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 control-label" for="specl"><b>Specialization:</b></label>
+                <div class="col-sm-7">
+                    <label class="checkbox-inline" for="chkbox1"><input type="checkbox" name="splsbj" id="chkbox1"
+                            value="Data Engineering" onclick="hiddenLbl()">Data Engineering </label>
+                    <label class="checkbox-inline" for="chkbox2"><input type="checkbox" name="splsbj" id="chkbox2"
+                            value="A.I. & Machine" onclick="hiddenLbl()">A.I. & Machine Learning</label>
+                    <label class="checkbox-inline" for="chkbox3"><input type="checkbox" name="splsbj" id="chkbox3"
+                            value="Cloud Computing" onclick="hiddenLbl()">Cloud Computing</label>
+                    <label class="checkbox-inline" for="chkbox4"><input type="checkbox" name="splsbj" id="chkbox4"
+                            value="Blockchain Technology" onclick="hiddenLbl()">BlockChain Technology</label>
+                </div>
+                <label class="col-sm-3 control-label" style="visibility:hidden; color:crimson; font-size: 15px;"
+                    for="chk_option_error" id="chk_option_error"><b>Please Select at least One Option...</b></label>
+            </div>
+
+            <p align="center">
+                <button type="submit" name="submit" value="submit" class="btn btn-default btn-md">Submit</button>
+                &nbsp; &nbsp; &nbsp;
+                <button type="button" name="cancel" value="cancel" class="btn btn-default btn-md">Cancel</button>
+            </p>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

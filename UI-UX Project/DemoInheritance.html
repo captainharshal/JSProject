@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeanClassTesting</title>
+
+    <script src="./DemoShape.js"></script>
+    <script src="./DemoRectangle.js"></script>
+    <script src="./DemoTriangle.js"></script>
+    <script src="./DemoCircle.js"></script>
+
+</head>
+
+<body>
+
+    <script>
+        Rec = new Rectangle('Red', 20, 5, 4);
+        document.writeln("Color of Rectangle = " + Rec.getcolor + "<br>", "Border Width = " + Rec.getBorderWidth + "<br>", "Length = " + Rec.getlength + "<br>", "Width = " + Rec.getwidth + "<br>", "Area of Rectangle = " + Rec.area() + "<br>" + "<br>");
+        Rec.setcolor = 'Blue';
+        Rec.setBorderWidth = 30;
+        Rec.setlength = 6;
+        Rec.setwidth = 8;
+        document.writeln("Color of Rectangle = " + Rec.getcolor + "<br>", "Border Width = " + Rec.getBorderWidth + "<br>", "Length = " + Rec.getlength + "<br>", "Width = " + Rec.getwidth + "<br>", "Area of Rectangle = " + Rec.area() + "<br>" + "<br>");
+    </script>
+
+    <script>
+        Tri = new Triangle('Yellow', 20, 5, 4);
+        document.writeln("Color of Triangle = " + Tri.getcolor + "<br>", "Border Width = " + Tri.getBorderWidth + "<br>", "Base = " + Tri.getbase + "<br>", "Height = " + Tri.getheight + "<br>", "Area of Triangle = " + Tri.area() + "<br>" + "<br>");
+        Tri.setcolor = 'Green';
+        Tri.setBorderWidth = 30;
+        Tri.setbase = 6;
+        Tri.setheight = 8;
+        document.writeln("Color of Triangle = " + Tri.getcolor + "<br>", "Border Width = " + Tri.getBorderWidth + "<br>", "Base = " + Tri.getbase + "<br>", "Height = " + Tri.getheight + "<br>", "Area of Triangle = " + Tri.area() + "<br>" + "<br>");
+    </script>
+
+    <script>
+        Cir = new Circle('Black', 20, 5);
+        document.writeln("Color of Circle = " + Cir.getcolor + "<br>", "Border Width = " + Cir.getBorderWidth + "<br>", "Radius = " + Cir.getradius + "<br>", "Area of Circle = " + Cir.area() + "<br>" + "<br>");
+        Cir.setcolor = 'Purple';
+        Cir.setBorderWidth = 10;
+        Cir.setradius = 8;
+        document.writeln("Color of Circle = " + Cir.getcolor + "<br>", "Border Width = " + Cir.getBorderWidth + "<br>", "Radius = " + Cir.getradius + "<br>", "Area of Circle = " + Cir.area() + "<br>" + "<br>");
+    </script>
+
+</body>
+
+</html>

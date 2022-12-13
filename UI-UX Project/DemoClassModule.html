@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetterSetter</title>
+
+    <script>
+        class RegStudent {
+
+            //Initializing an object
+            constructor(fName = '', lName = '', Age = 0) {
+                this.fName = fName;
+                this.lName = lName;
+                this.Age = Age;
+            }
+
+            // accessor property(setter)
+            setter() {
+                this.fName = document.getElementById('fName1').value;
+                this.lName = document.getElementById('lName1').value;
+                this.Age = document.getElementById('Age1').value;
+                document.getElementById('fName1').value = '';
+                document.getElementById('lName1').value = '';
+                document.getElementById('Age1').value = '';
+            }
+
+            // accessor property(getter)
+            getter() {
+                document.getElementById('fName1').value = this.fName;
+                document.getElementById('lName1').value = this.lName;
+                document.getElementById('Age1').value = this.Age;
+            }
+        }
+
+        //passing object to a variable 
+        var Reg1 = new RegStudent("Ajay", "Mishra", 30);
+
+    </script>
+
+</head>
+
+<body align="center">
+
+    <br>
+    <label>First Name:</label>
+    <input type="text" id="fName1">
+    <br><br>
+    <label>Last Name:</label>
+    <input type="text" id="lName1">
+    <br><br>
+    <label>Age:</label>
+    <input type="text" id="Age1">
+    <br><br>
+    <button type="button" id="btnset" onclick="Reg1.setter()">Set</button>
+    &nbsp;&nbsp;
+    <button type="button" id="btnget" onclick="Reg1.getter()">Get</button>
+
+</body>
+
+</html>
